@@ -8,6 +8,16 @@ Group    : Development/Tools
 License  : BSD-3-Clause
 BuildRequires : python3-dev
 BuildRequires : pip
+BuildRequires : pyzmq
+BuildRequires : ipykernel
+BuildRequires : ipython
+BuildRequires : ipython_genutils
+BuildRequires : jupyter_client
+BuildRequires : jupyter_core
+BuildRequires : python-dateutil
+BuildRequires : pexpect
+BuildRequires : ptyprocess
+BuildRequires : wcwidth
 
 %description
 No detailed description available
@@ -23,7 +33,7 @@ rm -rf %{buildroot}
 pip3 install --no-deps  --root %{buildroot} %{SOURCE0}
 for i in `find %{buildroot} -name "*.so" `; do rm $i; done
 
-
+python3 %{buildroot}/usr/lib/python3.6/site-packages/bash_kernel/install.py  install --prefix %{buildroot}/usr
 %files
 %defattr(-,root,root,-)
 /usr/lib/python3.6/site-packages
