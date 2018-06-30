@@ -36,4 +36,4 @@ for i in `find %{buildroot} -name "*.so" `; do rm $i; done
 python3 %{buildroot}/usr/lib/python3.6/site-packages/bash_kernel/install.py  install --prefix %{buildroot}/usr
 %files
 %defattr(-,root,root,-)
-/usr/lib/python3.6/site-packages
+/usr/lib/python3*/site-packages
