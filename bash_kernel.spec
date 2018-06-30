@@ -33,7 +33,7 @@ rm -rf %{buildroot}
 pip3 install --no-deps  --root %{buildroot} %{SOURCE0}
 for i in `find %{buildroot} -name "*.so" `; do rm $i; done
 
-python3 %{buildroot}/usr/lib/python3.6/site-packages/bash_kernel/install.py  install --prefix %{buildroot}/usr
+python3 %{buildroot}/usr/lib/python3.7/site-packages/bash_kernel/install.py  install --prefix %{buildroot}/usr
 %files
 %defattr(-,root,root,-)
 /usr/lib/python3*/site-packages
