@@ -1,6 +1,6 @@
 Name     : bash_kernel
 Version  : 0.4.1
-Release  : 9
+Release  : 10
 URL      : https://github.com/takluyver/bash_kernel/releases/download/0.4.1/bash_kernel-0.4.1-py2.py3-none-any.whl
 Source0  : https://github.com/takluyver/bash_kernel/releases/download/0.4.1/bash_kernel-0.4.1-py2.py3-none-any.whl
 Summary  : No detailed summary available
