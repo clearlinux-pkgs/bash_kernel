@@ -1,6 +1,6 @@
 Name     : bash_kernel
 Version  : 0.4.1
-Release  : 10
+Release  : 11
 URL      : https://github.com/takluyver/bash_kernel/releases/download/0.4.1/bash_kernel-0.4.1-py2.py3-none-any.whl
 Source0  : https://github.com/takluyver/bash_kernel/releases/download/0.4.1/bash_kernel-0.4.1-py2.py3-none-any.whl
 Summary  : No detailed summary available
@@ -33,7 +33,8 @@ rm -rf %{buildroot}
 pip3 install --no-deps  --root %{buildroot} %{SOURCE0}
 for i in `find %{buildroot} -name "*.so" `; do rm $i; done
 
-python3 %{buildroot}/usr/lib/python3.7/site-packages/bash_kernel/install.py  install --prefix %{buildroot}/usr
+
+python3 %{buildroot}/usr/lib/python$(python -c "import distutils.sysconfig; print(distutils.sysconfig.get_python_version())")/site-packages/bash_kernel/install.py  install --prefix %{buildroot}/usr
 %files
 %defattr(-,root,root,-)
 /usr/lib/python3*/site-packages
